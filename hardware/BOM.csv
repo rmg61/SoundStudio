@@ -1,0 +1,39 @@
+Section,Ref,Qty,Item,Specification / example part,Purpose,Est. unit USD,Est. line USD,Where to buy,Notes
+Brain,U1,1,Electrosmith Daisy Seed (65 MB),"STM32H750 480 MHz, 24-bit/96 kHz stereo codec, 64 MB SDRAM, USB",DSP computer that runs the effects,30.00,30.00,"electro-smith.com, Stompboxparts, Thonk, Elevator Sound",Get the version with headers. Runs C++ ports of js/dsp; flashed from Chrome via the Daisy Web Programmer
+Brain,J1,1,Micro-USB data cable,USB-A or USB-C to Micro-B; must be a DATA cable,Programming + link to SoundStudio,6.00,6.00,Any,Charge-only cables will not work
+Display,DS1,1,OLED display 128x64,"0.96 in or 1.3 in, SSD1306 controller, SPI (7-pin) or I2C (4-pin)","Shows effect name, parameter values, waveform",9.00,9.00,"Adafruit 326/938, Amazon, AliExpress",libDaisy has an SSD130x driver. 1.3 in is easier to read
+Controls,RV1-RV6,6,Rotary potentiometer B10K (linear),"Alpha 16 mm, 10 kΩ linear, solder lug, 6 mm D-shaft",Effect knobs (map to a/b/c and effect params),2.00,12.00,"Tayda, Small Bear, Love My Switches",Wire between 3V3 analog and AGND; wiper to an ADC pin
+Controls,RV7-RV8,2,Slide potentiometer 10K (linear),"Bourns PTA4543-2015DPB103 (45 mm travel, 10 kΩ linear)",Sliders (e.g. mix / output level),3.50,7.00,"Mouser, Digi-Key",Panel cut-out is a slot; easier on a top-mounted sub-panel
+Controls,—,6,Knob for 6 mm D-shaft,"Davies 1900H clone or similar, ~18–20 mm",Caps for RV1–RV6,1.00,6.00,"Tayda, Love My Switches",Pick colors to match the app's category colors
+Controls,—,2,Slider cap,For 45 mm slide pots (match lever type),Caps for RV7–RV8,1.00,2.00,"Mouser, Digi-Key",Usually sold separately from the slide pot
+Controls,SW1,1,Rotary encoder with push switch,"EC11-type, 20 detents, 6 mm shaft",Menu: scroll effects / presets; push = select,2.00,2.00,"Tayda, Adafruit 377",Needs a 7th knob cap
+Controls,—,1,Knob for encoder,6 mm D-shaft or knurled,Encoder cap,1.00,1.00,Tayda,
+Controls,SW2,1,Footswitch 3PDT latching,"9-lug 3PDT, latching (classic stompbox)",Bypass on/off,4.00,4.00,"Tayda, Love My Switches",In a DSP pedal this can be read as a digital input or used for true bypass
+Controls,SW3,1,Footswitch momentary,"SPST momentary, soft-touch",Tap tempo / next preset,4.00,4.00,"Tayda, Love My Switches",
+Controls,SW4-SW5,2,Toggle switch SPDT,"Mini toggle, ON-ON",Mode select (e.g. bank / FFT size),2.00,4.00,Tayda,Optional
+Controls,LED1-LED2,2,LED 5 mm + bezel,"One bypass color, one tap/status color",Bypass + tap indicators,0.50,1.00,Tayda,
+Controls,R1-R2,2,Resistor 1 kΩ 1/4 W,Metal film,LED current limit (driven from 3.3 V GPIO),0.05,0.10,Tayda,
+Audio I/O,J2-J3,2,1/4 in mono jack,"Switchcraft 111X (open frame) or Lumberg KLBM3",Guitar in + amp out,3.00,6.00,"Mouser, Small Bear, Tayda",Use stereo (TRS) jacks if you want stereo out later
+Audio I/O,U2,1,Dual op-amp,"TL072CP (DIP-8) + DIP-8 socket",Input buffer (guitar → codec) and output buffer,0.80,0.80,"Tayda, Mouser",Guitar needs ~1 MΩ input impedance; the codec input alone is too low
+Audio I/O,R3,1,Resistor 1 MΩ 1/4 W,Metal film,Input bias / input impedance,0.05,0.05,Tayda,
+Audio I/O,R4-R5,2,Resistor 10 kΩ 1/4 W,Metal film,4.5 V bias divider for the op-amp,0.05,0.10,Tayda,
+Audio I/O,R6,1,Resistor 1 kΩ 1/4 W,Metal film,Output series resistor,0.05,0.05,Tayda,
+Audio I/O,R7,1,Resistor 100 kΩ 1/4 W,Metal film,Output pull-down (prevents pops),0.05,0.05,Tayda,
+Audio I/O,C1-C4,4,Film capacitor 1 µF,"Box film, 63 V",Audio coupling caps (in/out of buffers),0.30,1.20,Tayda,
+Audio I/O,C5,1,Electrolytic capacitor 47 µF,25 V,Bias filter (4.5 V reference),0.10,0.10,Tayda,
+Audio I/O,C6,1,Ceramic capacitor 100 nF,50 V,Op-amp supply decoupling,0.05,0.05,Tayda,
+Power,J4,1,DC barrel jack 2.1 mm,"Panel mount, center-negative (Boss style)",9 V pedal power in,1.00,1.00,Tayda,
+Power,D1,1,Schottky diode,1N5817,Reverse-polarity protection,0.10,0.10,Tayda,
+Power,C7,1,Electrolytic capacitor 100 µF,25 V,Bulk supply filter,0.10,0.10,Tayda,
+Power,PS1,1,9 V DC pedal power supply,"Center-negative, 2.1 mm, ≥ 500 mA, isolated preferred",Powers the pedal,12.00,12.00,"Any music store, Amazon",Daisy Seed VIN accepts 9 V; it makes its own 3.3 V
+Build,—,1,Breadboard (full size) ×2,830 tie-points,Phase 1 bench mockup,5.00,5.00,Any,
+Build,—,1,Jumper wire kit,"M-M and M-F Dupont, assorted",Phase 1 wiring,7.00,7.00,Any,
+Build,—,1,Solderable perfboard / stripboard,~100 × 150 mm,Phase 2 permanent wiring,5.00,5.00,Any,
+Build,—,1,Female header strips,"2.54 mm, 20-pin ×2",Socket the Daisy Seed (removable),1.50,1.50,Any,
+Build,—,1,Hook-up wire kit,"22–24 AWG stranded, several colors",Panel wiring,10.00,10.00,Any,
+Build,—,1,Enclosure,"Hammond 1590XX (145 × 121 × 39 mm) or 1590BB (119 × 94 × 34 mm)",Pedal box (XX fits display + sliders),18.00,18.00,"Tayda (pre-drill service), Hammond dealers",Tayda offers custom drilling and UV printing
+Build,—,4,Standoffs M3 + screws,"Nylon, 10 mm",Mount perfboard / display,0.30,1.20,Any,
+Build,—,4,Rubber feet,Self-adhesive,Enclosure feet,0.25,1.00,Any,
+Optional,MK1,1,Electret mic + preamp module,"MAX4466 or MAX9814 breakout",Built-in sampling mic (original SoundStudio idea),7.00,7.00,"Adafruit 1063/1713, Amazon",Feeds the codec's 2nd input channel
+Optional,AMP1,1,Small speaker amp + speaker,"PAM8403 (3 W) module + 4–8 Ω 2–3 W speaker",Practice speaker without an amp,8.00,8.00,Amazon,
+Optional,J5,1,3.5 mm headphone jack (TRS),Panel mount,Headphone monitoring,1.50,1.50,Tayda,Drive through the output buffer

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoundStudio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">SoundStudio <span class="ver">v0.1</span></div>
+
+    <div class="source-controls">
+      <label class="btn" title="Open an audio file (WAV, MP3, FLAC, OGG, M4A…)">
+        Open file
+        <input type="file" id="fileInput" hidden
+               accept="audio/*,.wav,.mp3,.ogg,.oga,.opus,.flac,.m4a,.aac,.webm,.aif,.aiff,.caf">
+      </label>
+      <button class="btn" id="recordBtn" title="Record from your microphone">
+        <span class="rec-dot"></span><span id="recordLabel">Record</span>
+      </button>
+      <select id="exampleSelect" class="select" title="Load an example sound">
+        <option value="">Examples…</option>
+      </select>
+    </div>
+
+    <div class="sound-info" id="soundInfo">No sound loaded</div>
+
+    <button class="btn help-btn" id="helpBtn" title="How to write equations, and what the variables mean">
+      <span class="help-q">?</span> Help
+    </button>
+
+    <button class="btn primary" id="exportBtn" disabled title="Download the processed sound as a WAV file">
+      Export WAV
+    </button>
+  </header>
+
+  <main>
+    <section class="panels">
+      <div id="originalPanel" class="panel panel-orig"></div>
+      <div class="sync-strip">
+        <button id="syncBtn" class="sync-btn" aria-pressed="false"
+                title="When on, zooming or scrolling one panel does the same to the other">
+          <span class="sync-icon">⇄</span>Zoom<br>Sync
+        </button>
+      </div>
+      <div id="processedPanel" class="panel panel-proc"></div>
+      <div class="build-split"></div>
+      <div id="builtPanel" class="panel panel-build"></div>
+    </section>
+
+    <section id="builderSection" class="builder"></section>
+
+    <section class="rack">
+      <div class="rack-head">
+        <h2>Effects chain</h2>
+        <select id="addEffect" class="select" title="Add an effect to the end of the chain">
+          <option value="">+ Add effect…</option>
+        </select>
+        <button class="btn" id="clearChain" title="Remove all effects (processed = original)">Reset to original</button>
+        <span class="hint">Effects run top to bottom. The original is never changed.
+          Knobs: drag up/right to turn up, down/left to turn down (Shift = fine), scroll wheel, double-click to reset. Space = play/stop.</span>
+      </div>
+      <div id="chain" class="chain"></div>
+    </section>
+  </main>
+
+  <dialog id="helpDialog" class="help-dialog" aria-labelledby="helpTitle">
+    <div class="help-header">
+      <h2 id="helpTitle">Equation guide</h2>
+      <nav class="help-tabs" role="tablist">
+        <button class="help-tab" role="tab" data-page="time">Equation (time)</button>
+        <button class="help-tab" role="tab" data-page="fft">FFT equation</button>
+        <button class="help-tab" role="tab" data-page="builder">Wave Builder</button>
+        <button class="help-tab" role="tab" data-page="syntax">Syntax &amp; functions</button>
+      </nav>
+      <button class="icon-btn help-close" title="Close (Esc)">✕</button>
+    </div>
+    <div class="help-body"></div>
+  </dialog>
+
+  <div id="toast" class="toast" hidden></div>
+  <div id="dropOverlay" class="drop-overlay" hidden>Drop an audio file to load it</div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
