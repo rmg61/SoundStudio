@@ -3,6 +3,8 @@
 A browser-based workbench for capturing sounds and reshaping their waveforms
 with knobs, sliders, filters and your own math equations.
 
+**▶ Try it live: https://rmg61.github.io/SoundStudio/**
+
 **Version 0.1** — plain HTML/CSS/JavaScript, no build step, no dependencies.
 
 ## Features
